@@ -16,6 +16,12 @@ view = ["dep:alice-view"]
 voice = ["dep:alice-voice"]
 streaming = ["dep:libasp"]
 physics = ["dep:alice-physics"]
+codec = ["dep:alice-codec"]
+cdn = ["dep:alice-cdn"]
+cache = ["dep:alice-cache"]
+db = ["dep:alice-db"]
+browser = ["dep:alice-browser"]
+ml = ["dep:alice-ml"]
 
 [dependencies]
 alice-sdf = { path = "../ALICE-SDF", default-features = false }
@@ -29,6 +35,12 @@ alice-view = { path = "../ALICE-View", optional = true, default-features = false
 alice-voice = { path = "../ALICE-Voice", optional = true, default-features = false }
 libasp = { path = "../ALICE-Streaming-Protocol", optional = true, default-features = false }
 alice-physics = { path = "../ALICE-Physics", optional = true, default-features = false }
+alice-codec = { path = "../ALICE-Codec", optional = true, default-features = false }
+alice-cdn = { path = "../ALICE-CDN", optional = true, default-features = false }
+alice-cache = { path = "../ALICE-Cache", optional = true, default-features = false }
+alice-db = { path = "../ALICE-DB", optional = true, default-features = false }
+alice-browser = { path = "../ALICE-Browser", optional = true, default-features = false }
+alice-ml = { path = "../ALICE-ML", optional = true, default-features = false }
 
 [dev-dependencies]
 alice-sdf = { path = "../ALICE-SDF", default-features = false }

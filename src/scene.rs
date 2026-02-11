@@ -181,6 +181,20 @@ impl SceneGraph {
         self.actors.iter().filter(|s| s.is_some()).count()
     }
 
+    /// Sum of all actor positions and count (for camera framing).
+    #[inline]
+    pub fn actor_positions_sum(&self) -> (Vec3, usize) {
+        let mut sum = Vec3::ZERO;
+        let mut count = 0usize;
+        for actor in self.actors.iter().flatten() {
+            if actor.visible {
+                sum += actor.local_transform.position;
+                count += 1;
+            }
+        }
+        (sum, count)
+    }
+
     /// Evaluate the entire scene at a given time, producing a union of all visible actor SDFs.
     pub fn evaluate_scene(&self, time: f32) -> SdfNode {
         let mut nodes: Vec<SdfNode> = Vec::with_capacity(self.actors.len());
